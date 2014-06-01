@@ -21,6 +21,7 @@
 
 @interface NSDictionary (JSON)
 
++ (NSDictionary *)dictionaryWithContentOfJSONFile:(NSString *)path;
 - (NSString *)JSONString;
 
 @end

@@ -28,6 +28,15 @@
 
 @implementation NSDictionary (JSON)
 
++ (NSDictionary *)dictionaryWithContentOfJSONFile:(NSString *)path
+{
+    NSError *error = nil;
+    NSString *content = [NSString stringWithContentsOfFile:path
+                                                  encoding:NSUTF8StringEncoding
+                                                     error:&error];
+    return [content objectFromJSONString];
+}
+
 - (NSString *)JSONString
 {
     NSError *error = nil;
